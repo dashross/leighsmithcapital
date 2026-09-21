@@ -1,0 +1,245 @@
+:root{
+  --field:#1D3327;
+  --field-deep:#16281E;
+  --paper:#ECEDE6;
+  --ink:#1A1E1A;
+  --ink-soft:#4A5049;
+  --ivory:#EDE8DA;
+  --ivory-soft:#C2C4B4;
+  --gilt:#A98B4E;
+  --rule-soft:#8E948A;
+  --display:"Libre Caslon Display",Georgia,"Times New Roman",serif;
+  --text:"Libre Caslon Text",Georgia,"Times New Roman",serif;
+  --measure:34rem;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--text);
+  font-size:1.0625rem;
+  line-height:1.72;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+::selection{background:var(--gilt);color:var(--field-deep)}
+
+.wrap{
+  width:100%;
+  max-width:52rem;
+  margin-inline:auto;
+  padding-inline:1.5rem;
+}
+
+/* ---------- the swelled rule, the one repeated ornament ---------- */
+
+.rule{
+  display:block;
+  width:8.5rem;
+  height:9px;
+  margin-inline:auto;
+  overflow:visible;
+}
+.rule path{fill:currentColor}
+
+/* ---------- title page ---------- */
+
+.title-page{
+  background:var(--field);
+  color:var(--ivory);
+  padding:clamp(6rem,21vh,12rem) 0 clamp(5.5rem,18vh,10.5rem);
+  text-align:center;
+}
+
+.seal{
+  display:block;
+  width:5.25rem;
+  height:5.25rem;
+  margin:0 auto clamp(2.25rem,5vh,3.25rem);
+  color:var(--gilt);
+}
+
+.wordmark{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:clamp(1.9rem,6.4vw,3.35rem);
+  line-height:1.12;
+  letter-spacing:.11em;
+  /* the trailing letterspace pushes centred text left; give it back */
+  text-indent:.11em;
+  margin:0;
+  color:var(--ivory);
+}
+
+.title-page .rule{
+  color:var(--gilt);
+  margin-block:clamp(1.5rem,3.6vh,2.25rem);
+}
+
+.standfirst{
+  font-style:italic;
+  font-size:clamp(1.0625rem,2.4vw,1.1875rem);
+  color:var(--ivory-soft);
+  margin:0;
+}
+
+/* ---------- the statement ---------- */
+
+.statement{
+  padding:clamp(4rem,11vh,6.5rem) 0;
+  text-align:center;
+}
+.statement .rule{
+  color:var(--rule-soft);
+  width:7.5rem;
+  height:6px;
+}
+
+.title-page.interior + main .statement{padding-top:clamp(3rem,8vh,4.5rem)}
+
+.statement p{
+  font-family:var(--display);
+  font-size:clamp(1.45rem,4.6vw,2.1rem);
+  line-height:1.4;
+  margin:clamp(1.75rem,4vh,2.5rem) auto;
+  max-width:24ch;
+  text-wrap:balance;
+}
+
+/* ---------- scholarly marginal heads ---------- */
+
+.leaves{
+  padding-bottom:clamp(4.5rem,12vh,7rem);
+}
+
+.leaf{
+  display:grid;
+  grid-template-columns:8.5rem minmax(0,var(--measure));
+  column-gap:3rem;
+  justify-content:center;
+}
+.leaf + .leaf{margin-top:clamp(2.75rem,7vh,4rem)}
+
+.leaf h2{
+  font-family:var(--display);
+  font-style:italic;
+  font-weight:400;
+  font-size:1.1875rem;
+  line-height:1.72;
+  text-align:right;
+  color:var(--ink-soft);
+  margin:0;
+}
+
+.leaf p{
+  margin:0;
+  max-width:58ch;
+}
+.leaf p + p{margin-top:.9rem}
+
+.leaf a{
+  color:inherit;
+  text-decoration:none;
+  border-bottom:1px solid var(--ink-soft);
+  padding-bottom:1px;
+}
+.leaf a:hover{border-bottom-width:2px;padding-bottom:0}
+
+/* ---------- colophon ---------- */
+
+.colophon{
+  background:var(--field);
+  color:var(--ivory-soft);
+  padding:2.5rem 0;
+  font-size:.9375rem;
+}
+.colophon .wrap{
+  text-align:center;
+}
+.colophon p{margin:0}
+.colophon .name{color:var(--ivory);letter-spacing:.055em}
+
+/* ---------- one orchestrated entrance ---------- */
+
+@media (prefers-reduced-motion:no-preference){
+  .title-page > * > .rise{
+    opacity:0;
+    animation:rise 1.15s cubic-bezier(.22,.61,.36,1) forwards;
+  }
+  .rise-1{animation-delay:.06s}
+  .rise-2{animation-delay:.2s}
+  .rise-3{animation-delay:.36s}
+  .rise-4{animation-delay:.5s}
+  .rise-5{animation-delay:.6s}
+}
+@keyframes rise{
+  from{opacity:0;transform:translateY(.7rem)}
+  to{opacity:1;transform:none}
+}
+
+:focus-visible{
+  outline:2px solid var(--gilt);
+  outline-offset:3px;
+}
+
+@media (max-width:40rem){
+  body{font-size:1.0625rem;line-height:1.7}
+  .leaf{
+    grid-template-columns:minmax(0,1fr);
+    row-gap:.4rem;
+  }
+  .leaf h2{text-align:left}
+  .leaf + .leaf{margin-top:2.75rem}
+  .seal{width:4.25rem;height:4.25rem}
+  }
+
+/* ---------- the quietest possible navigation ---------- */
+
+.ledger{
+  display:flex;
+  justify-content:center;
+  gap:2.75rem;
+  margin-bottom:clamp(3rem,8vh,4.75rem);
+  font-size:.9375rem;
+  font-style:italic;
+}
+.ledger a{
+  color:var(--ivory-soft);
+  text-decoration:none;
+  padding-bottom:2px;
+  border-bottom:1px solid transparent;
+}
+.ledger a:hover{border-bottom-color:var(--gilt)}
+.ledger a[aria-current="page"]{
+  color:var(--ivory);
+  border-bottom-color:var(--gilt);
+}
+
+/* ---------- interior page: a shorter field, no seal ---------- */
+
+.title-page.interior{
+  padding:clamp(3rem,7vh,4.5rem) 0 clamp(3.25rem,8vh,5rem);
+}
+.title-page.interior .wordmark{
+  font-size:clamp(1.6rem,5.2vw,2.6rem);
+}
+
+/* the opening paragraph of a leaf section, set a size up */
+.lead{
+  font-size:1.1875rem;
+  line-height:1.66;
+}
+
+@media (max-width:40rem){
+  .ledger{gap:2rem;margin-bottom:2.5rem}
+}
+
+/* the closing line sits directly under the last leaf, rule first */
+.statement.closing{padding-top:0}
+.statement.closing p{margin-bottom:0}
