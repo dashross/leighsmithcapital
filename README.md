@@ -55,3 +55,21 @@ touched. Only the four apex A records belong to the website.
 host instead, but that would publish the owning account's username in DNS for
 anyone who ran a lookup. Pointing it at the apex lands on the same servers and
 reveals nothing.
+
+### If the apex A records will not edit
+
+GoDaddy greys out the edit and delete controls on the apex A records and says
+*"You can't modify records that have been applied by a product or service
+connected to your domain."* That is domain forwarding, not a permissions
+problem. This domain had a forwarding rule sending `leighsmithcapital.com` to
+`https://leighsmithcapital.com`, a 302 to itself, which owned the two parked A
+records.
+
+Delete the rule under **DNS > Forwarding** and the parked A records collapse
+into one editable row. Forwarding is web only, so removing it cannot affect
+mail.
+
+The record-type dropdown in the **Add New Record** form does not respond to
+synthetic clicks; it has to be set as a form value. The Copy button on a record
+row copies the value to the clipboard, it does not duplicate the row. Use
+**Add another value** on a single A record to attach all four IPs at once.
