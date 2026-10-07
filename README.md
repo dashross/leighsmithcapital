@@ -5,6 +5,7 @@ Static site. No build step, no JavaScript, no dependencies.
 ```
 index.html        Overview
 the-firm/         The Firm
+enquiries/        Enquiries, a contact form that goes nowhere on purpose
 style.css         shared stylesheet
 seal.svg          favicon and monogram
 CNAME             the custom domain, read by GitHub Pages
@@ -27,6 +28,15 @@ photography, and no navigation beyond two words.
 The copy states nothing that has not been confirmed. No personal names, no
 address, no phone, no holdings, no founding date, no team. The one figure on
 the site is the AUM line on the Overview page.
+
+## The contact form
+
+`enquiries/` is a form that sends nothing, deliberately. No field has a `name`
+attribute, so the browser submits nothing, not even into the URL, and Send
+just opens `enquiries/received/`, which tells the writer, with perfect manners
+and no warmth, that the form is not connected and the partners have no wish to
+hear from them. Filling it in is the test, and anyone who does has failed it. Do not add a
+`name` to any field or a form service behind it.
 
 ## Local preview
 

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enquiries &middot; Leigh Smith Capital</title>
+<meta name="description" content="Enquiries to Leigh Smith Capital.">
+<link rel="canonical" href="https://leighsmithcapital.com/enquiries/">
+<meta property="og:title" content="Enquiries">
+<meta property="og:description" content="By introduction only.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://leighsmithcapital.com/enquiries/">
+<meta name="theme-color" content="#1D3327">
+<link rel="icon" href="/seal.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="title-page interior">
+  <div class="wrap">
+
+    <nav class="ledger rise rise-1" aria-label="Sections">
+      <a href="/">Overview</a>
+      <a href="/the-firm/">The Firm</a>
+      <a href="/enquiries/" aria-current="page">Enquiries</a>
+    </nav>
+
+    <h1 class="wordmark rise rise-3">Enquiries</h1>
+
+    <svg class="rule rise rise-4" viewBox="0 0 136 9" aria-hidden="true">
+      <path d="M0 4.5 68 0l68 4.5-68 4.5Z"/>
+    </svg>
+
+  </div>
+</header>
+
+<main>
+
+  <section class="leaves form-leaves">
+    <div class="wrap">
+
+      <!-- No field carries a name attribute, so nothing typed here is ever
+           submitted, not even into the URL. The button only opens the
+           received page. -->
+      <form class="leaf correspondence" action="/enquiries/received/" method="get">
+        <h2>Write</h2>
+        <div>
+          <label for="f-name">Name</label>
+          <input id="f-name" type="text" autocomplete="name" required>
+
+          <label for="f-email">Email</label>
+          <input id="f-email" type="email" autocomplete="email" required>
+
+          <label for="f-message">Message</label>
+          <textarea id="f-message" rows="6" required></textarea>
+
+          <button type="submit">Send</button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="colophon">
+  <div class="wrap">
+    <p class="name">Leigh Smith Capital</p>
+  </div>
+</footer>
+
+</body>
+</html>

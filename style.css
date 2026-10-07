@@ -243,3 +243,49 @@ body{
 /* the closing line sits directly under the last leaf, rule first */
 .statement.closing{padding-top:0}
 .statement.closing p{margin-bottom:0}
+
+/* ---------- enquiries: a form set like the leaves ---------- */
+
+.form-leaves{padding-top:clamp(3.5rem,9vh,5rem)}
+
+.correspondence label{
+  display:block;
+  font-style:italic;
+  font-size:.9375rem;
+  color:var(--ink-soft);
+  margin-top:1.5rem;
+}
+.correspondence label:first-child{margin-top:0}
+
+.correspondence input,
+.correspondence textarea{
+  display:block;
+  width:100%;
+  font:inherit;
+  color:var(--ink);
+  background:transparent;
+  border:0;
+  border-bottom:1px solid var(--rule-soft);
+  border-radius:0;
+  padding:.35rem 0;
+  resize:vertical;
+}
+.correspondence input:focus,
+.correspondence textarea:focus{
+  outline:none;
+  border-bottom-color:var(--field);
+}
+
+.correspondence button{
+  margin-top:2.25rem;
+  font-family:var(--display);
+  font-size:1rem;
+  letter-spacing:.11em;
+  color:var(--ivory);
+  background:var(--field);
+  border:0;
+  border-radius:0;
+  padding:.7rem 2.25rem;
+  cursor:pointer;
+}
+.correspondence button:hover{background:var(--field-deep)}
